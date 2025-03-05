@@ -1,0 +1,3 @@
+use ("utt_maldj_store")
+
+db.products.find()

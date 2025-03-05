@@ -1,0 +1,12 @@
+use("utt_maldj_store")
+
+db.products.updateOne(
+    {_id: 2},
+    { 
+        // $nombre es un operador
+        // nombre() metodo de bd
+        $inc: {
+            price: 121,
+        }
+    }
+)

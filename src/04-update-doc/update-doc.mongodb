@@ -1,0 +1,16 @@
+use("utt_maldj_store")
+
+db.products.updateOne(
+    // Query id
+    {_id: 2},
+    // Change => operador 
+    { 
+        $set: {
+        name: 'Tshirt',
+        price: 890,
+        tags: ['S', 'M', 'L','XL']
+        }
+    }
+)
+
+
