@@ -1,0 +1,19 @@
+// Actualización de multiples registros 
+
+use ("sample_training")
+
+// db.zips.find( { city: "CLEVELAND"} )
+
+// 2369
+// 1244
+
+db.zips.updateMany(
+    // query
+    { city: "CLEVELAND" },
+    // update -- operador 
+    {
+        $inc: {
+            pop: 1000
+        }
+    }
+)
