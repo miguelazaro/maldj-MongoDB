@@ -1,11 +1,10 @@
 use("utt_maldj_store")
 
 db.products.updateOne(
-    {_id:ObjectId('67c76f0cdd58182d5b77de51')
+    {_id:
+        ObjectId("67d4c01d73427b91a9b61aeb")
     },
-    { 
-        // $nombre es un operador
-        // nombre() metodo de bd
+    {
         $inc: {
             price: 97,
         }
