@@ -1,0 +1,59 @@
+use("utt_maldj_store")
+
+
+db.inventory.updateOne(
+    { _id: 4 },
+    {
+        $push: {
+            tags: "headphone"
+        }
+    }
+)
+
+
+// Insert other elements from arrays with UpdateMany
+db.inventory.updateMany(
+    { _id:4 },
+    {
+        $push: {
+            tags: {
+                $each: ["headphone", "wireless"]
+            }
+        }
+    }
+)
+
+db.inventory.updateMany(
+    {},
+    {
+        $push: {
+            tags: {
+                $each: ["speaker", "mouse", "pin"]
+            }
+        }
+    }
+)
+
+// Insert other elements from arrays with UpdateOne
+db.inventory.updateOne(
+    { _id:4 },
+    {
+        $push: {
+            tags: {
+                $each: ["headphone", "wireless"]
+            }
+        }
+    }
+)
+
+//En este caso solo agrega los datos al primer elemento que cumpla con la condicion
+db.inventory.updateOne(
+    {},
+    {
+        $push: {
+            tags: {
+                $each: ["speaker", "mouse", "pin"]
+            }
+        }
+    }
+)
